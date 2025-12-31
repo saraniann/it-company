@@ -159,4 +159,83 @@
   .mission-grid .card p {
     font-size: 13px;
   }
+}/* Mobile Styles Added */
+@media (max-width: 1024px) {
+    .mission-grid .card {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .Mission {
+        padding: 60px 20px;
+    }
+
+    .Mission h2 {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .mission-grid {
+        gap: 24px;
+    }
+
+    .mission-grid .card {
+        padding: 30px 24px;
+    }
+
+    .mission-grid .card p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Mission {
+        padding: 40px 16px;
+    }
+
+    .Mission h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .mission-grid .card {
+        padding: 24px 20px;
+    }
+
+    .card-content h3 {
+        font-size: 24px;
+    }
+
+    .mission-grid .card p {
+        font-size: 14px;
+    }
+}/* Refined Mobile Styles (< 480px) */
+@media (max-width: 480px) {
+    .Mission {
+        padding: 30px 15px;
+    }
+
+    .Mission h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .mission-grid .card {
+        padding: 20px 15px;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .mission-grid .card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .card-image img {
+        height: 150px;
+    }
 }

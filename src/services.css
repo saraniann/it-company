@@ -141,4 +141,39 @@
   .services h2 {
     font-size: 32px;
   }
+}/* Mobile Styles Added */
+@media (max-width: 1024px) {
+    .services-container {
+        gap: 50px;
+    }
+
+    .services-content {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .services-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services h2 {
+        font-size: 28px;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
 }

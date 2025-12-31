@@ -13,8 +13,6 @@ body {
 }
 
 /* Background handled by body */
-padding: 40px 20px;
-}
 
 .home-container {
     max-width: 1200px;
