@@ -1,0 +1,205 @@
+.about {
+  padding: 100px 60px;
+  background: transparent;
+  color: white;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 42px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #4DB8E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about>p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #b5b5c5;
+  line-height: 1.7;
+}
+
+.about>p:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.team-heading {
+  font-size: 32px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #4DB8E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-grid {
+  display: flex;
+  /* Changed from grid to flex for smooth transitions */
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+  min-height: 550px;
+  /* Fixed height to prevent jerking */
+  align-items: flex-start;
+  /* Prevent stretching height */
+}
+
+.team-grid.stacked {
+  gap: 0;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Sped up expansion */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  /* Default expanded state */
+  min-width: 0;
+  /* Allow shrinking */
+}
+
+/* Stacked State Styles */
+.team-grid.stacked .team-card {
+  flex: 0;
+  width: 0;
+  padding: 0;
+  border-width: 0;
+  opacity: 0;
+  margin: 0;
+}
+
+.team-grid.stacked .team-card.hidden {
+  pointer-events: none;
+}
+
+.team-grid.stacked .team-card.active {
+  flex: 0 0 100%;
+  /* Take full width */
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 30px;
+  border-width: 1px;
+  opacity: 1;
+  margin: 0 auto;
+  transform: scale(1.05);
+  /* Highlight active card */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  border-color: #4DB8E8;
+  box-shadow: 0 0 30px rgba(77, 184, 232, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4DB8E8 0%, #226483 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto 20px;
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border: 3px solid rgba(77, 184, 232, 0.3);
+}
+
+.team-card h4 {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+  /* Prevent breaking during transition */
+}
+
+.team-role {
+  font-size: 14px;
+  color: #4DB8E8;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.team-bio {
+  font-size: 14px;
+  color: #b5b5c5;
+  line-height: 1.6;
+  margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Quote Styles */
+.team-quote {
+  font-size: 14px;
+  color: #fff;
+  font-style: italic;
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(20px);
+  border-top: 1px solid rgba(77, 184, 232, 0.3);
+  padding-top: 0;
+}
+
+/* Show quote on hover AND when active in stacked mode */
+.team-card:hover .team-quote,
+.team-grid.stacked .team-card.active .team-quote {
+  margin-top: 15px;
+  max-height: 100px;
+  opacity: 1;
+  transform: translateY(0);
+  padding-top: 15px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .team-grid {
+    flex-direction: column;
+  }
+
+  .team-grid.stacked {
+    /* On mobile, stacking might act differently, but keeping logic consistent */
+    flex-direction: row;
+    /* Ideally stacked mode needs horizontal space, but mobile is vertical list usually. 
+        For this request, let's keep the carousel behavior even on mobile if possible, 
+        or revert to simple list. Let's keep carousel logic.
+    */
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* ... existing mobile styles ... */
+  .team-grid.stacked .team-card.active {
+    max-width: 300px;
+  }
+}

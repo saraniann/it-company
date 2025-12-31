@@ -1,0 +1,222 @@
+.hero {
+  height: 90vh;
+  background: transparent;
+  color: white;
+  text-align: center;
+  padding: 140px 20px 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract Background Ring */
+
+
+/* Ensure content is above background */
+.hero>* {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  /* Initial state for entrance animation */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero h1 {
+  animation-delay: 0.2s;
+}
+
+.hero p {
+  animation-delay: 0.4s;
+}
+
+.hero-buttons {
+  animation-delay: 0.6s;
+}
+
+.service-grid {
+  animation-delay: 0.8s;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.2;
+  }
+}
+
+.hero h1 {
+  font-size: 48px;
+  max-width: 800px;
+  margin: auto;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #4DB8E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #bbb;
+  font-size: 16px;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.primary {
+  background: #4DB8E8;
+  border: none;
+  padding: 14px 26px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.primary:hover {
+  background: #3a9fc7;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #4DB8E8;
+  padding: 14px 26px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary:hover {
+  background: #4DB8E8;
+}
+
+.card {
+  background: #15152a;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 50px auto 0 auto;
+  padding: 0 20px;
+}
+
+.service-grid .card {
+  text-align: center;
+  padding: 40px 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+.service-grid .card:hover {
+  transform: translateY(-5px);
+  border-color: #4DB8E8;
+  box-shadow: 0 0 30px rgba(77, 184, 232, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.service-grid .card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: white;
+  font-weight: 600;
+}
+
+.icon-box {
+  color: #4DB8E8;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-grid .card p {
+  font-size: 15px;
+  color: #bbb;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px;
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 24px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+}

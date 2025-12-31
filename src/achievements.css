@@ -1,0 +1,156 @@
+.achievements {
+    background: transparent;
+    padding: 100px 5%;
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.achievements-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.achievements-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.achievements h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.achievements p {
+    font-size: 18px;
+    color: #b5b5c5;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+
+
+.achievement-btn:hover {
+    background: #3a9fc7;
+}
+
+.achievements-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-backdrop {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background: #4DB8E8;
+    /* Accent Color */
+    z-index: 0;
+    opacity: 0.1;
+    /* Subtle backdrop like reference */
+}
+
+/* Reference image had a solid block on the right, lets mimic that */
+.achievements-image img {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    border-radius: 4px;
+    /* Minimal radius like reference */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation Tabs */
+.achievements-nav {
+    display: flex;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.nav-item {
+    color: #888;
+    padding-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    color: #fff;
+}
+
+.nav-item.active {
+    color: #fff;
+    border-bottom: 2px solid white;
+    /* Active indicator */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .achievements-container {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .achievements-content {
+        text-align: center;
+    }
+
+    .achievements h2 {
+        font-size: 32px;
+    }
+
+    .achievements-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .achievements-image {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .achievements-image img {
+        height: 300px;
+    }
+}
