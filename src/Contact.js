@@ -15,7 +15,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/messages", {
+      const response = await fetch("/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
