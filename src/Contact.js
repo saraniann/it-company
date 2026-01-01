@@ -26,7 +26,7 @@ const Contact = () => {
       if (response.ok) {
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("Failed to send message.");
+
       }
     } catch (error) {
       console.error("Error:", error);
