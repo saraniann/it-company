@@ -17,7 +17,7 @@ const Contact = () => {
     // Simulate form submission
     console.log("Form Submitted", formData);
     setFormData({ name: "", email: "", message: "" });
-    alert("Message sent successfully (Simulation)!");
+
   };
 
   return (
