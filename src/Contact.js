@@ -14,24 +14,10 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Error connecting to server. Make sure json-server is running.");
-    }
+    // Simulate form submission
+    console.log("Form Submitted", formData);
+    setFormData({ name: "", email: "", message: "" });
+    alert("Message sent successfully (Simulation)!");
   };
 
   return (
